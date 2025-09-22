@@ -74,7 +74,6 @@
             // 
             // btnIdentificationControl
             // 
-            this.btnIdentificationControl.Enabled = false;
             this.btnIdentificationControl.Location = new System.Drawing.Point(224, 82);
             this.btnIdentificationControl.Name = "btnIdentificationControl";
             this.btnIdentificationControl.Size = new System.Drawing.Size(226, 23);

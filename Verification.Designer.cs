@@ -50,6 +50,7 @@
             this.txtVerify.Size = new System.Drawing.Size(339, 213);
             this.txtVerify.TabIndex = 3;
             this.txtVerify.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtVerify.TextChanged += new System.EventHandler(this.txtVerify_TextChanged);
             // 
             // Verification
             // 

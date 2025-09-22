@@ -157,16 +157,17 @@ namespace UareUSampleCSharp
         Verification identificationControl;
         private void btnIdentificationControl_Click(object sender, EventArgs e)
         {
-            if (identificationControl == null)
-            {
-                identificationControl = new Verification();
-                identificationControl._sender = this;
-            }
+           
+             if (identificationControl == null)
+              {
+                  identificationControl = new Verification();
+                  identificationControl._sender = this;
+              }
 
-            identificationControl.ShowDialog();
+              identificationControl.ShowDialog();
 
-            identificationControl.Dispose();
-            identificationControl = null;
+              identificationControl.Dispose();
+              identificationControl = null;
         }
         #endregion
 

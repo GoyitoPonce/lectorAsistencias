@@ -114,8 +114,10 @@ namespace UareUSampleCSharp
                                 {
                                     // Coincidencia encontrada
                                     SendMessage(Action.SendMessage, $"Bienvenido: {employee.name} {employee.last_name}");
-
-                                    await SendAsistant(employee.fk_employee);
+                                    //se manda la asistencia
+                                    SelecType form = new SelecType();
+                                    form.SetCurrentEmployee(employee.fk_employee);
+                                    form.ShowDialog();
 
                                     var cancellationTokenSource = new CancellationTokenSource();
                                     var cancellationToken = cancellationTokenSource.Token;
@@ -157,49 +159,6 @@ namespace UareUSampleCSharp
             }
         }
 
-        private async Task SendAsistant(int fk_employee)
-        {
-                // Serializar los datos de la huella digital y el posicionamiento del dedo en formato JSON
-                var payload = new
-                {
-                    pkEmployee = fk_employee
-                };
-
-                // Convertir los datos a JSON
-                string jsonPayload = JsonConvert.SerializeObject(payload);
-
-                // Crear el cliente HTTP y definir la URL de la API en Laravel
-                using (HttpClient client = new HttpClient())
-                {
-                    // Reemplaza con tu URL de API de Laravel
-                    string url = "https://thelastadmin.com/saveAsistant";
-
-                    // Configurar el contenido de la solicitud
-                    HttpContent content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
-
-                    try
-                    {
-                        // Enviar la solicitud POST
-                        HttpResponseMessage response = await client.PostAsync(url, content);
-
-                        // Verificar el resultado de la solicitud
-                        if (response.IsSuccessStatusCode)
-                        {
-                        //  SendMessage("Huella enviada y guardada correctamente en el servidor.");
-                    }
-                    else
-                        {
-                         MessageBox.Show($"Error al registrar la asistencia favor de volver a checkar: {response.StatusCode} - {response.ReasonPhrase}");
-                    }
-                }
-                    catch (Exception ex)
-                    {
-                    // Manejar posibles excepciones
-                    MessageBox.Show($"Error al registrar la asistencia favor de volver a checkar: {ex}");
-                }
-            }
-            
-        }
 
         // Clase para deserializar el JSON de Laravel
         public class Employee
@@ -263,5 +222,10 @@ namespace UareUSampleCSharp
             }
         }
         #endregion
+
+        private void txtVerify_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

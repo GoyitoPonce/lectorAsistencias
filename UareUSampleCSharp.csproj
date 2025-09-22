@@ -135,6 +135,12 @@
     <Compile Include="ReaderSelection.Designer.cs">
       <DependentUpon>ReaderSelection.cs</DependentUpon>
     </Compile>
+    <Compile Include="SelecType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelecType.Designer.cs">
+      <DependentUpon>SelecType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Stream.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +186,9 @@
     </Compile>
     <EmbeddedResource Include="ReaderSelection.resx">
       <DependentUpon>ReaderSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelecType.resx">
+      <DependentUpon>SelecType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Stream.resx">
       <DependentUpon>Stream.cs</DependentUpon>
